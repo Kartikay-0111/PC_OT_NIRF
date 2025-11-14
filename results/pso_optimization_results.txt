@@ -1,0 +1,15 @@
+--- PSO Optimization Final Result ---
+
+Best Possible TLR Score (Predicted): 30.1265
+
+Optimal Subcomponent Scores:
+                Component  Optimal_Score
+                 ss_score           9.02
+                fsr_score           0.96
+                fqe_score          11.84
+                fru_score           9.04
+                 oe_score           7.13
+                mir_score           0.65
+    phd_per_faculty_ratio           0.87
+     students_per_faculty           0.09
+total_expense_per_student           0.29

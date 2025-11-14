@@ -118,7 +118,7 @@ def main():
     # 6. Display the results
     max_tlr_score = -best_cost
 
-    print("\n--- 🚀 PSO Optimization Complete ---")
+    print("\n--- PSO Optimization Complete ---")
     print(f"\nBest Possible TLR Score (Predicted): {max_tlr_score:.4f}")
     
     results = pd.DataFrame({

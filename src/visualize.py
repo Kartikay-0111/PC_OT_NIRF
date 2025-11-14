@@ -1,8 +1,6 @@
-# src/visualize.py
-
 """
 Generates exploratory data analysis (EDA) plots for the NIRF TLR project.
-This supports "Phase 1: Baseline Data and Diagnostics"[cite: 26, 27].
+This supports "Phase 1: Baseline Data and Diagnostics".
 
 Plots generated:
 1. Boxplots of all TLR subcomponent scores.
@@ -21,17 +19,17 @@ import numpy as np
 
 # --- Constants ---
 
-# Assumes this script is in 'src/' and data is in 'data/processed/'
-# Use the FEATURED data, not the raw input data
+# MODIFIED #1: Use the ORIGINAL input data, not the normalized feature data.
+# This ensures the plots use the human-readable scales (0-30, 0-20 etc.)
 DATA_PATH = os.path.join(
     os.path.dirname(__file__), 
-    "..", "data", "processed", "tlr_model_features.csv"
+    "..", "data", "processed", "tlr_model_input.csv" 
 )
 
-# Directory to save generated plots
+# MODIFIED #2: Changed "results" to "reports" to match your README's structure.
 OUTPUT_DIR = os.path.join(
     os.path.dirname(__file__), 
-    "..", "results", "figures"
+    "..", "reports", "figures"
 )
 
 # Columns to be used for plotting
@@ -48,7 +46,8 @@ def load_data(path):
     """Loads the processed TLR dataset."""
     if not os.path.exists(path):
         print(f"Error: Data file not found at {path}")
-        print("Please run 'python src/preprocess.py' first to generate the data.")
+        # MODIFIED #3: Changed the error message to point to the correct script.
+        print("Please run 'python src/utils.py' first to generate the data.")
         return None
     
     print(f"Loading data from {path}...")
@@ -156,7 +155,7 @@ def plot_radar_chart(df, institutes, year, output_dir):
     ax.set_rlabel_position(180 / num_vars)
     ax.set_yticks([10, 20, 30]) # Set gridlines based on score weights
     ax.set_yticklabels(["10", "20", "30"])
-    ax.set_ylim(0, 30) # Max weight for FSR/FRU is 30 [cite: 22]
+    ax.set_ylim(0, 30) # Max weight for FSR/FRU is 30
     
     plt.title(f'TLR Component Comparison ({year})', size=16, y=1.1)
     plt.legend(loc='upper right', bbox_to_anchor=(1.3, 1.1))
@@ -193,7 +192,7 @@ def main():
         output_dir=OUTPUT_DIR
     )
     
-    print("\n✅ Visualization script finished.")
+    print("\nVisualization script finished.")
 
 
 if __name__ == "__main__":

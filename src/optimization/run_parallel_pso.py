@@ -53,12 +53,12 @@ def save_results(score, df_results):
     print(f"\nSaving final results to: {output_path}")
     
     with open(output_path, 'w') as f:
-        f.write("--- 🏆 PSO Optimization Final Result ---\n\n")
+        f.write("--- PSO Optimization Final Result ---\n\n")
         f.write(f"Best Possible TLR Score (Predicted): {score:.4f}\n\n")
         f.write("Optimal Subcomponent Scores:\n")
         f.write(df_results.to_string(index=False))
         
-    print("✅ Results saved.")
+    print("Results saved.")
 
 
 def main():
@@ -101,7 +101,7 @@ def main():
     max_tlr_score = -best_cost
 
     # --- 4. Display Final Result ---
-    print("\n--- 🏆 Overall Best Result (from all runs) ---")
+    print("\n--- Overall Best Result (from all runs) ---")
     print(f"Found by Run ID: {best_run_id}")
     print(f"Best Possible TLR Score (Predicted): {max_tlr_score:.4f}")
     

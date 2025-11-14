@@ -93,7 +93,7 @@ def generate_tlr_dataset(num_institutes=40, start_year=2020, end_year=2025, outp
             os.makedirs(out_dir, exist_ok=True)
 
     df.to_csv(output_path, index=False)
-    print(f"✅ Generated dataset with {len(df)} rows at: {os.path.abspath(output_path)}")
+    print(f"Generated dataset with {len(df)} rows at: {os.path.abspath(output_path)}")
 
     return df
 

@@ -137,7 +137,7 @@ def main():
     print(f"Saving Random Forest model to {MODEL_PATH}...")
     joblib.dump(rf_model, MODEL_PATH)
     
-    print("✅ Modeling script finished.")
+    print("Modeling script finished.")
 
 
 if __name__ == "__main__":

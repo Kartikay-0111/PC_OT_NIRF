@@ -151,7 +151,7 @@ def main():
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     normalized_df.to_csv(OUTPUT_PATH, index=False)
     
-    print(f"\n✅ Preprocessing complete!")
+    print(f"\nPreprocessing complete!")
     print(f"Processed data saved to: {OUTPUT_PATH}")
     print("\n--- Processed Data Head ---")
     print(normalized_df.head())
