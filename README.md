@@ -1,4 +1,4 @@
-# VJTI NIRF Rank Optimization (OT\_Lab Project)
+# VJTI's NIRF Rank Optimization Project
 
 [](https://www.python.org/)
 [](https://pandas.pydata.org/)
